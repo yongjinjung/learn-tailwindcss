@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="fixed left-0 right-0 bg-gray-800 text-white p-4 z-50">
+      <nav class="container mx-auto flex justify-between items-center">
+        <div class="text-2xl font-bold">MyShop</div>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">Products</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container max-w-5xl mx-auto px-4 pb-8 pt-24 flex gap-x-4">
+      <section class="bg-yellow-500 w-3/5">
+        <div class="grid grid-cols-2 gap-4">
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="City Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="Landscape Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="Mountain Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="River Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="Forest Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="Ocean Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="Desert Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="Waterfall Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1727078129056-87c9e5f14c12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8aG1lbnZRaFVteE18fGVufDB8fHx8fA%3D%3D"
+            alt="Beach Image"
+            class="w-full h-full rounded-lg shadow-md"
+          />
+        </div>
+      </section>
+      <aside class="w-2/5 border re">
+        <div class="sticky top-16 border-2 border-stone-500 rounded-lg p-4">
+          <h2 class="text-2xl font-bold">장바구니</h2>
+          <div class="space-y-2">
+            <div class="flex justify-between">
+              <span>상품1</span>
+              <span>10,0000</span>
+            </div>
+            <div class="flex justify-between">
+              <span>싱품2</span>
+              <span>20,0000</span>
+            </div>
+            <hr />
+            <div class="flex justify-between font-bold pt-2">
+              <span>총합계</span>
+              <span>30,0000</span>
+            </div>
+          </div>
+          <button
+            class="bg-green-500 w-full rounded-lg py-2 text-white mt-4 hover:bg-green-600"
+          >
+            결재하기
+          </button>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
