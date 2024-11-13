@@ -4,23 +4,122 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>개발자 포트폴리오</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: '#da373d',
-            },
-          },
-        },
-      };
-    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
   </head>
   <body>
-    <h1 class="text-3xl text-clifford font-bold underline bg-slate-100">
-      Hello world!!
-    </h1>
+    <header class="sticky top-0 backdrop-blur-lg bg-opacity-90">
+      <nav
+        class="container max-w-4xl mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-4">
+          <h1 class="text-2xl font-bold">김개발</h1>
+          <p class="text-sm text-gray-500">풀스택 개발자</p>
+        </div>
+        <div class="flex items-center gap-6">
+          <a
+            href="#Home"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >홈</a
+          >
+          <a
+            href="#"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >소개</a
+          >
+          <a
+            href="#"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >기술</a
+          >
+          <a
+            href="#"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >프로젝트</a
+          >
+          <a
+            href="#"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >연락처</a
+          >
+          <button
+            class="p-2 w-10 h-10 bg-gray-200 rounded-full focus:outline-none focus:ring focus:ring-blue-500"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="container max-w-4xl mx-auto px-6 py-12">
+      <!-- Home Section -->
+      <section id="Home" class="flex justify-between items-center mb-12">
+        <div class="shrink-0 mr-10">
+          <img
+            class="w-56 h-56 rounded-full border-2 object-cover"
+            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Brian"
+            alt="avatar"
+          />
+        </div>
+        <div class="text-right">
+          <h1 class="text-4xl font-bold mb-2">김개발</h1>
+          <p class="text-xl mb-4">혁신적인 개발자</p>
+          <p class="text-gray-600 p-2">
+            5년 이상의 경력을 가진 열정적인 풀스택 개발자입니다. 확장 가능한 웹
+            애플리케이션 구축에 전문성을 갖추고 있으며, 최신 Javascript
+            프레임워크와 클라우드 기술에 대한 전문 지식을 보유하고 있습니다.
+            항상 새로운 도전과 학습을 즐깁니다.
+          </p>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold pl-1 mb-6">소개</h2>
+        <!-- <div class="flex justify-between items-center space-x-3"> -->
+        <div class="grid grid-cols-2 gap-6">
+          <article
+            class="p-4 bg-slate-100 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-lg font-semibold mb-4">
+              <i class="fa-solid fa-graduation-cap"></i>
+              교육 및 활동
+            </h3>
+            <ul class="text-gray-800 leading-relaxed">
+              <li>✌🏼2023 프로트엔드 개발자</li>
+              <li>✌🏼2022 웹 개발</li>
+              <li>✌🏼2021 오픈소스 프로젝트 참여</li>
+              <li>✌🏼2020 대학 동아리 웹 개발 팀장 활동</li>
+            </ul>
+          </article>
+          <article
+            class="p-4 bg-slate-100 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-lg font-semibold mb-4">
+              <i class="fa-solid fa-id-card"></i>
+              자격증
+            </h3>
+            <ul class="text-gray-800 leading-relaxed">
+              <li>✌🏼2023 프로트엔드 개발자</li>
+              <li>✌🏼2022 웹 개발</li>
+              <li>✌🏼2021 오픈소스 프로젝트 참여</li>
+              <li>✌🏼2020 대학 동아리 웹 개발 팀장 활동</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="bg-yellow-300 h-60">
+        <h2 class="text-3xl font-bole mb-6">기술</h2>
+      </section>
+      <section class="bg-yellow-400 h-60">
+        <h2 class="text-3xl font-bole mb-6">프로젝트</h2>
+      </section>
+      <section class="bg-yellow-500 h-60">
+        <h2 class="text-3xl font-bole mb-6">연락처</h2>
+      </section>
+    </main>
+    <footer class="bg-gray-400 w-full h-20"></footer>
   </body>
 </html>
