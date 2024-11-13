@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <script>
+    // Tailwind 설정에서 다크 모드를 selector로 설정
+    tailwind.config = {
+      // darkMode: 'media', // 운영 체제의 모드에 맞게 설정
+      darkMode: 'selector', // 수동으로 설정
+    };
+
+    const toggleMode = () => {
+      if (document.body.classList.contains('dark')) {
+        document.body.classList.remove('dark');
+      } else {
+        document.body.classList.add('dark');
+      }
+    };
+  </script>
+  <body class="dark">
+    <main
+      class="min-h-screen flex items-center justify-center dark:bg-slate-950"
+    >
+      <div class="text-center border shadow-md rounded-md p-8">
+        <h1 class="text-4xl font-bold dark:text-white">
+          TailWind CSS 다크 모드
+        </h1>
+        <p class="dark:text-white mt-4 text-sm">
+          이 페이지는 다크 모드를 지원합니다.
+        </p>
+        <button
+          class="bg-indigo-500 py-2 px-4 rounded-lg text-white mt-4"
+          onclick="toggleMode()"
+        >
+          다크 모드 전환
+        </button>
+        <div class="dark:bg-slate-800 dark:text-white mt-4 p-4 rounded-lg">
+          이 박스는 다크 모드에서 배경이 어두운 색으로 변합니다.
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
