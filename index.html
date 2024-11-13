@@ -4,23 +4,32 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>개발자 포트폴리오</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: '#da373d',
-            },
-          },
-        },
-      };
-    </script>
   </head>
   <body>
-    <h1 class="text-3xl text-clifford font-bold underline bg-slate-100">
-      Hello world!!
-    </h1>
+    <header class="bg-gray-200 w-full h-20">
+      <div>
+        <div></div>
+      </div>
+    </header>
+    <main class="bg-gray-300 container max-w-4xl mx-auto px-6 py-12">
+      <!-- Home Section -->
+      <section class="bg-red-200 h-60"></section>
+      <!-- About Section -->
+      <section class="bg-yellow-200 h-60">
+        <h2 class="text-3xl font-bole mb-6">소개</h2>
+      </section>
+      <section class="bg-yellow-300 h-60">
+        <h2 class="text-3xl font-bole mb-6">기술</h2>
+      </section>
+      <section class="bg-yellow-400 h-60">
+        <h2 class="text-3xl font-bole mb-6">프로젝트</h2>
+      </section>
+      <section class="bg-yellow-500 h-60">
+        <h2 class="text-3xl font-bole mb-6">연락처</h2>
+      </section>
+    </main>
+    <footer class="bg-gray-400 w-full h-20"></footer>
   </body>
 </html>
