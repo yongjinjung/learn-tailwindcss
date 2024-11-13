@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="container p-6 w-full h-full">
+    <!-- Transition 미적용 -->
+    <button
+      class="mx-auto block text-5xl bg-blue-500 rounded-lg p-4 hover:bg-blue-950"
+    >
+      Hover me
+    </button>
+    <!-- transition 적용 -->
+    <button
+      class="mx-auto block text-5xl bg-blue-500 rounded-lg p-4 mt-4 hover:bg-blue-950 hover:text-white transition duration-1000"
+    >
+      Hover me
+    </button>
+  </body>
+</html>
