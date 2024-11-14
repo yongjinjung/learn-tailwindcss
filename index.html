@@ -10,17 +10,24 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+    <script>
+      tailwind.config = {
+        darkMode: 'selector',
+      };
+    </script>
   </head>
-  <body>
+  <body
+    class="bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen transition-colors duration-300"
+  >
     <header class="sticky top-0 backdrop-blur-lg bg-opacity-90">
       <nav
         class="container max-w-4xl mx-auto px-6 py-3 flex justify-between items-center"
       >
         <div class="flex items-center space-x-4">
           <h1 class="text-2xl font-bold">김개발</h1>
-          <p class="text-sm text-gray-500">풀스택 개발자</p>
+          <p class="text-sm text-gray-500 dark:text-slate-300">풀스택 개발자</p>
         </div>
-        <div class="flex items-center gap-6">
+        <div class="hidden md:flex items-center gap-6">
           <a
             href="#Home"
             class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
@@ -47,13 +54,59 @@
             >연락처</a
           >
           <button
-            class="p-2 w-10 h-10 bg-gray-200 rounded-full focus:outline-none focus:ring focus:ring-blue-500"
+            id="darkModeToggle"
+            class="p-2 w-10 h-10 bg-gray-200 dark:bg-slate-700 rounded-full focus:outline-none focus:ring focus:ring-blue-500"
           >
-            <i class="fas fa-moon"></i>
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+          </button>
+        </div>
+        <button id="menuToggle" class="md:hidden p-2 text-slate-700 dark:text-white">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </nav>
+    </header>
+    <aside
+      id="mobilMenu"
+      class="block md:hidden fixed right-0 inset-y-0 w-64 bg-white dark:bg-slate-800 shadow-lg translate-x-full transition duration-700 z-"
+    >
+      <button id="closeMenu" class="p-2 m-4 text-slate-700 dark:text-white">
+        <i class="fas fa-times text-2xl"></i>
+      </button>
+      <nav class="flex flex-col space-y-4 mt-10 p-6">
+        <a
+            href="#Home"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >홈</a
+          >
+          <a
+            href="#"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >소개</a
+          >
+          <a
+            href="#"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >기술</a
+          >
+          <a
+            href="#"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >프로젝트</a
+          >
+          <a
+            href="#"
+            class="hover:text-blue-500 hover:underline transition-color duration-300 text-lg font-bold"
+            >연락처</a
+          >
+          <button
+            id="darkmodeToggleMobile"
+            class="p-2 w-full h-10 bg-gray-200 dark:bg-slate-700 rounded-full focus:outline-none focus:ring focus:ring-blue-500"
+          >
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
           </button>
         </div>
       </nav>
-    </header>
+    </aside>
     <main class="container max-w-4xl mx-auto px-6 py-12">
       <!-- Home Section -->
       <section id="Home" class="flex justify-between items-center mb-12">
@@ -67,7 +120,7 @@
         <div class="text-right">
           <h1 class="text-4xl font-bold mb-2">김개발</h1>
           <p class="text-xl mb-4">혁신적인 개발자</p>
-          <p class="text-gray-600 p-2">
+          <p class="text-gray-600 p-2 dark:text-slate-400">
             5년 이상의 경력을 가진 열정적인 풀스택 개발자입니다. 확장 가능한 웹
             애플리케이션 구축에 전문성을 갖추고 있으며, 최신 Javascript
             프레임워크와 클라우드 기술에 대한 전문 지식을 보유하고 있습니다.
@@ -81,13 +134,13 @@
         <!-- <div class="flex justify-between items-center space-x-3"> -->
         <div class="grid grid-cols-2 gap-6">
           <article
-            class="p-4 bg-slate-100 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <h3 class="text-lg font-semibold mb-4">
-              <i class="fa-solid fa-graduation-cap"></i>
-              교육 및 활동
+              <i class="fa-solid fa-graduation-cap dark:text-slate-400"></i>
+              <span class="ml-1"> 교육 및 활동 </span>
             </h3>
-            <ul class="text-gray-800 leading-relaxed">
+            <ul class="text-gray-800 dark:text-slate-400 leading-relaxed">
               <li>✌🏼2023 프로트엔드 개발자</li>
               <li>✌🏼2022 웹 개발</li>
               <li>✌🏼2021 오픈소스 프로젝트 참여</li>
@@ -95,13 +148,13 @@
             </ul>
           </article>
           <article
-            class="p-4 bg-slate-100 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <h3 class="text-lg font-semibold mb-4">
-              <i class="fa-solid fa-id-card"></i>
-              자격증
+              <i class="fa-solid fa-id-card dark:text-slate-400"></i>
+              <span class="ml-1">자격증</span>
             </h3>
-            <ul class="text-gray-800 leading-relaxed">
+            <ul class="text-gray-800 dark:text-slate-400 leading-relaxed">
               <li>✌🏼2023 프로트엔드 개발자</li>
               <li>✌🏼2022 웹 개발</li>
               <li>✌🏼2021 오픈소스 프로젝트 참여</li>
@@ -114,37 +167,37 @@
         <h2 class="text-3xl font-bole mb-6">기술</h2>
         <div class="grid grid-cols-3 gap-6 text-center">
           <div
-            class="bg-slate-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <i class="fa-brands fa-html5 text-5xl block text-red-500"></i>
             <h3 class="text-lg font-bold">HTML5</h3>
           </div>
           <div
-            class="bg-slate-100 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <i class="fa-brands fa-css3-alt text-5xl block text-blue-500"></i>
             <span class="text-lg font-bold">CSS3</span>
           </div>
           <div
-            class="bg-slate-100 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <i class="fa-brands fa-js text-5xl block text-yellow-500"></i>
             <span class="text-lg font-bold">JavaScript</span>
           </div>
           <div
-            class="bg-slate-100 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <i class="fa-brands fa-java text-5xl block text-red-600"></i>
             <span class="text-lg font-bold">Java</span>
           </div>
           <div
-            class="bg-slate-100 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <i class="fa-brands fa-react text-5xl block text-blue-400"></i>
             <span class="text-lg font-bold">React</span>
           </div>
           <div
-            class="bg-slate-100 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 py-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <i class="fa-brands fa-vuejs text-5xl block text-green-400"></i>
             <span class="text-lg font-bold">Vue.js</span>
@@ -155,7 +208,7 @@
         <h2 class="text-3xl font-bole mb-6">프로젝트</h2>
         <div class="grid grid-cols-2 gap-4">
           <article
-            class="bg-slate-100 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <img
               class="object-cover rounded-lg w-full"
@@ -163,7 +216,9 @@
               alt=""
             />
             <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800">전자상거래 플랫폼</h3>
+              <h3 class="text-lg font-bold text-gray-800 dark:text-slate-400">
+                전자상거래 플랫폼
+              </h3>
               <div class="space-x-2 mt-4">
                 <span
                   class="text-xs bg-slate-200 px-2 rounded-md text-gray-700 border border-gray-300"
@@ -189,7 +244,7 @@
               <div class="flex justify-start mt-4 space-x-2">
                 <a
                   href="#"
-                  class="text-sm bg-slate-800 text-white rounded-md px-3 py-1"
+                  class="text-sm bg-slate-800 dark:bg-slate-600 text-white rounded-md px-3 py-1"
                 >
                   GitHub
                 </a>
@@ -203,7 +258,7 @@
             </div>
           </article>
           <article
-            class="bg-slate-100 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <img
               class="object-cover rounded-lg w-full"
@@ -211,7 +266,9 @@
               alt=""
             />
             <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800">전자상거래 플랫폼</h3>
+              <h3 class="text-lg font-bold text-gray-800 dark:text-slate-400">
+                전자상거래 플랫폼
+              </h3>
               <div class="space-x-2 mt-4">
                 <span
                   class="text-xs bg-slate-200 px-2 rounded-md text-gray-700 border border-gray-300"
@@ -237,7 +294,7 @@
               <div class="flex justify-start space-x-2 mt-4">
                 <a
                   href="#"
-                  class="text-sm bg-slate-800 text-white rounded-md px-3 py-1"
+                  class="text-sm bg-slate-800 dark:bg-slate-600 text-white rounded-md px-3 py-1"
                 >
                   GitHub
                 </a>
@@ -251,7 +308,7 @@
             </div>
           </article>
           <article
-            class="bg-slate-100 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <img
               class="object-cover rounded-lg w-full"
@@ -259,7 +316,9 @@
               alt=""
             />
             <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800">전자상거래 플랫폼</h3>
+              <h3 class="text-lg font-bold text-gray-800 dark:text-slate-400">
+                전자상거래 플랫폼
+              </h3>
               <div class="space-x-2 mt-4">
                 <span
                   class="text-xs bg-slate-200 px-2 rounded-md text-gray-700 border border-gray-300"
@@ -285,7 +344,7 @@
               <div class="flex justify-start space-x-2 mt-4">
                 <a
                   href="#"
-                  class="text-sm bg-slate-800 text-white rounded-md px-3 py-1"
+                  class="text-sm bg-slate-800 dark:bg-slate-600 text-white rounded-md px-3 py-1"
                 >
                   GitHub
                 </a>
@@ -299,7 +358,7 @@
             </div>
           </article>
           <article
-            class="bg-slate-100 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            class="bg-slate-100 dark:bg-slate-800 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
           >
             <img
               class="object-cover rounded-lg w-full"
@@ -307,7 +366,9 @@
               alt=""
             />
             <div class="p-4">
-              <h3 class="text-lg font-bold text-gray-800">전자상거래 플랫폼</h3>
+              <h3 class="text-lg font-bold text-gray-800 dark:text-slate-400">
+                전자상거래 플랫폼
+              </h3>
               <div class="space-x-2 mt-4">
                 <span
                   class="text-xs bg-slate-200 px-2 rounded-md text-gray-700 border border-gray-300"
@@ -333,7 +394,7 @@
               <div class="flex justify-start space-x-2 mt-4">
                 <a
                   href="#"
-                  class="text-sm bg-slate-800 text-white rounded-md px-3 py-1"
+                  class="text-sm bg-slate-800 dark:bg-slate-600 text-white rounded-md px-3 py-1"
                 >
                   GitHub
                 </a>
@@ -348,10 +409,147 @@
           </article>
         </div>
       </section>
-      <section class="bg-yellow-500 h-60">
+      <section id="cantact" class="mb-16">
         <h2 class="text-3xl font-bole mb-6">연락처</h2>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="">
+            <form action="">
+              <label for="name" class="text-sm font-medium mb-1 block"
+                >이름</label
+              >
+              <input
+                id="name"
+                type="text"
+                class="py-2 px-4 w-full rounded-lg border border-gray-300 dark:border-slate-600 mb-4 focus:outline-none focus:ring focus:ring-blue-500 dark:bg-slate-700"
+                required
+              />
+              <label for="email" class="text-sm font-medium mb-1 block"
+                >이메일</label
+              >
+              <input
+                id="email"
+                type="email"
+                class="p-2 w-full rounded-lg border border-gray-300 dark:border-slate-600 mb-4 dark:bg-slate-700"
+                required
+              />
+              <label for="message" class="text-sm font-medium mb-1 block"
+                >메시지</label
+              >
+              <textarea
+                id="message"
+                class="p-2 w-full border border-gray-300 dark:border-slate-600 h-20 rounded-lg mb-1 dark:bg-slate-700"
+                name=""
+                required
+              ></textarea>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-500 transition-colors"
+              >
+                이메일 보내기
+              </button>
+            </form>
+          </div>
+          <div class="flex flex-col justify-center space-y-4 items-center">
+            <a
+              href="#"
+              target="_blank"
+              class="text-gray-600 dark:text-slate-400 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-github"></i>
+              <span class="text-sm font-semibold"> GitHub </span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="text-gray-600 dark:text-slate-400 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-youtube"></i>
+              <span class="text-sm font-semibold"> YouTube </span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="text-gray-600 dark:text-slate-400 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-square-instagram"></i>
+              <span class="text-sm font-semibold"> Instagram </span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="text-gray-600 dark:text-slate-400 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              <span class="text-sm font-semibold">jyj1641@gmail.com </span>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
-    <footer class="bg-gray-400 w-full h-20"></footer>
+    <footer class="bg-gray-100 dark:bg-slate-800 py-6">
+      <div class="container max-w-4xl mx-auto text-center px-6">
+        <p>&copy;2024 김개발 All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        if (localStorage.theme === 'dark') {
+          darkMode();
+        } else {
+          whiteMode();
+        }
+      })();
+
+      function toggleDarkMode() {
+        if (document.documentElement.classList.contains('dark')) {
+          whiteMode();
+        } else {
+          darkMode();
+        }
+      }
+
+      function darkMode() {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+        iconToggle('dark');
+      }
+
+      function whiteMode() {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+        iconToggle('light');
+      }
+
+      function iconToggle(theme) {
+        const darkModeToggleIcon = document
+          .querySelector('#darkModeToggle')
+          .querySelector('i');
+        if (theme === 'dark') {
+          darkModeToggleIcon.className = 'fas fa-sun text-yellow-400';
+        } else {
+          darkModeToggleIcon.className = 'fas fa-moon text-gray-700';
+        }
+      }
+
+      function toggleMenu (){
+        document.querySelector('#mobilMenu').classList.toggle('translate-x-full')
+      }
+
+      document
+        .querySelector('#darkModeToggle')
+        .addEventListener('click', toggleDarkMode);
+
+      document.querySelector('#darkmodeToggleMobile')
+      .addEventListener('click', toggleDarkMode)
+
+      document.querySelector('#menuToggle')
+        .addEventListener('click', toggleMenu)
+
+        document.querySelector('#closeMenu')
+        .addEventListener('click', toggleMenu)
+      // const changeMode = function () {
+      //   document.documentElement.classList.toggle('dark');
+      // };
+    </script>
   </body>
 </html>
